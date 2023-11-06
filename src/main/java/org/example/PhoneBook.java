@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class PhoneBook {
@@ -16,7 +17,13 @@ public class PhoneBook {
             if (!MAP.containsKey(name)) {
                 MAP.put(name,number);
             }
+        }else{
+            MAP=new HashMap<>();
+            MAP.put(name,number);
         }
         return size();
+    }
+    public String findByNumber(int number){
+        return null;
     }
 }
