@@ -24,6 +24,10 @@ public class PhoneBook {
         return size();
     }
     public String findByNumber(int number){
-        return null;
+
+            for(Map.Entry entry: MAP.entrySet()) {
+                if (entry.getValue().equals(number)) return entry.getKey().toString();
+            }
+            return null;
     }
 }
