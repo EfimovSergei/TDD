@@ -12,7 +12,7 @@ class PhoneBookTest {
         PhoneBook phoneBook = new PhoneBook();
 
         int initialSize = phoneBook.size();
-        int newSize = phoneBook.add("John Doe", 1234567890);
+        int newSize = phoneBook.add("John", 1234567890);
 
         Assertions.assertEquals(initialSize + 1, newSize);
     }
@@ -21,17 +21,17 @@ class PhoneBookTest {
     public void findByNumberTest() {
         PhoneBook phoneBook = new PhoneBook();
 
-        phoneBook.add("John Doe", 1234567890);
+        phoneBook.add("John", 1234567890);
         String name = phoneBook.findByNumber(1234567890);
-        Assertions.assertEquals("John Doe", name);
+        Assertions.assertEquals("John", name);
     }
 
     @Test
     public void findByNameTest() {
         PhoneBook phoneBook = new PhoneBook();
 
-        phoneBook.add("John Doe", 1234567890);
-        String name = "John Doe";
+        phoneBook.add("John", 1234567890);
+        String name = "John";
         int number = phoneBook.findByName(name);
         Assertions.assertEquals(1234567890, number);
     }
@@ -45,7 +45,7 @@ class PhoneBookTest {
 
         List<String> result = phoneBook.printAllNames();
 
-        List<String> expected = Arrays.asList("Alina", "Dasha", "Dmitriy", "Evgenii");
+        List<String> expected = Arrays.asList("Alina", "Dasha", "Dmitriy", "Evgenii","John");
 
         Assertions.assertEquals(expected,result);
     }

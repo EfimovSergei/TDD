@@ -1,8 +1,6 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBook {
     static Map<String, Integer> MAP = null;
@@ -39,6 +37,12 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+
+        TreeMap<String, Integer> treeMap = new TreeMap<>(MAP);
+        List<String> list = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+            list.add(entry.getKey());
+        }
+        return list;
     }
 }
